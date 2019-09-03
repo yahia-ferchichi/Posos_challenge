@@ -1,0 +1,15 @@
+{% extends "personal/mainpage.html" %}
+{% block content %}
+		<h1>Bonjour, veuillez introduisez votre question pour vous renseiger sur une problematique médicale</h1>
+	{% include "personal/includes/htmlsnippet.html" %}
+{% endblock %}
+{% block content2 %}
+	<form action="result/" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		<input id="your_text" type="text" name="your_text" value="">
+		<button type="submit">Envoyer</button>
+	</form>
+	{% if uploaded_file_url %}
+		<p>File uploaded at: <a href="{{ uploaded_file_url }}">{{ uploaded_file_url }}</a></p>
+	{% endif %}
+{% endblock %}

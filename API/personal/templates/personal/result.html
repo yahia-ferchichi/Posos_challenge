@@ -1,0 +1,9 @@
+{% extends "personal/mainpage.html" %}
+{% block content %}
+	{% load staticfiles %}
+	{% for c in content %}
+		<h1 class="display-4">{{c}}</h1>
+	{% endfor %}
+{% endblock %}
+
+
